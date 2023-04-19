@@ -39,10 +39,6 @@ class EllipticCurvePoint<T extends FieldElement<R>, R> extends GroupElement<
       super.getValue().y === other.getValue().y
     );
   };
-
-  toString() {
-    return this.getValue().toString();
-  }
 }
 
 class EllipticCurve<T extends FieldElement<R>, R> extends Group<

@@ -16,6 +16,10 @@ abstract class GroupElement<T> {
   };
 
   abstract equals: (other: GroupElement<T>) => boolean;
+
+  toString = (): string => {
+    return this.value.toString();
+  };
 }
 
 abstract class Group<T> {
@@ -38,6 +42,10 @@ abstract class Group<T> {
   };
 
   abstract id: () => GroupElement<T>;
+
+  toString = (): string => {
+    return this.getName();
+  };
 }
 
 export { Group, GroupElement };

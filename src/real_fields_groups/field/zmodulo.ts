@@ -8,10 +8,6 @@ class ZModuloPElement extends FieldElement<number> {
   equals = (other: FieldElement<number>) => {
     return this.getValue() == other.getValue();
   };
-
-  toString() {
-    return this.getValue().toString();
-  }
 }
 
 class ZModuloP extends Field<number> {
@@ -99,10 +95,6 @@ class ZModuloP extends Field<number> {
   newElement = (value: number): FieldElement<number> => {
     return new ZModuloPElement(value, this);
   };
-
-  toString() {
-    return this.name;
-  }
 }
 
 export { ZModuloP, ZModuloPElement };

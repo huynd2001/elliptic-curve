@@ -16,6 +16,10 @@ abstract class FieldElement<T> {
   };
 
   abstract equals: (other: FieldElement<T>) => boolean;
+
+  toString = () => {
+    return this.value.toString();
+  };
 }
 
 abstract class Field<T> {
@@ -50,6 +54,10 @@ abstract class Field<T> {
   abstract mulId: () => FieldElement<T>;
 
   abstract newElement: (value: T) => FieldElement<T>;
+
+  toString = (): string => {
+    return this.getName();
+  };
 }
 
 export { Field, FieldElement };
