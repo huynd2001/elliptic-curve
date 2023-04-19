@@ -51,3 +51,5 @@ abstract class Field<T> {
 
   abstract newElement: (value: T) => FieldElement<T>;
 }
+
+export { Field, FieldElement };

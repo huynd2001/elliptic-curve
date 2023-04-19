@@ -1,3 +1,6 @@
+import { Field, FieldElement } from "../../group_theory/field";
+import { Group, GroupElement } from "../../group_theory/group";
+
 class PointPairing<R> {
   public readonly x: R;
   public readonly y: R;
@@ -29,11 +32,11 @@ class EllipticCurvePoint<T extends FieldElement<R>, R> extends GroupElement<
     super(new PointPairing<R>(infinity, x, y), curve);
   }
 
-  equals = (other: FieldElement<PointPairing<R>>): boolean => {
+  equals = (other: GroupElement<PointPairing<R>>): boolean => {
     return (
-      this.getValue().infinity === other.getValue().infinity &&
-      this.getValue().x === other.getValue().x &&
-      this.getValue().y === other.getValue().y
+      super.getValue().infinity === other.getValue().infinity &&
+      super.getValue().x === other.getValue().x &&
+      super.getValue().y === other.getValue().y
     );
   };
 
@@ -108,3 +111,5 @@ class EllipticCurve<T extends FieldElement<R>, R> extends Group<
     );
   };
 }
+
+export { EllipticCurve, EllipticCurvePoint };

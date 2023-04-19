@@ -15,7 +15,7 @@ abstract class GroupElement<T> {
     return this.field;
   };
 
-  abstract equals: (other: FieldElement<T>) => boolean;
+  abstract equals: (other: GroupElement<T>) => boolean;
 }
 
 abstract class Group<T> {
@@ -39,3 +39,5 @@ abstract class Group<T> {
 
   abstract id: () => GroupElement<T>;
 }
+
+export { Group, GroupElement };

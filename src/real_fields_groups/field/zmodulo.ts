@@ -1,14 +1,16 @@
+import { Field, FieldElement } from "../../group_theory/field";
+
 class ZModuloPElement extends FieldElement<number> {
   constructor(value: number, field: ZModuloP) {
     super(value, field);
   }
 
   equals = (other: FieldElement<number>) => {
-    return super.getValue() == other.getValue();
+    return this.getValue() == other.getValue();
   };
 
   toString() {
-    return super.getValue().toString();
+    return this.getValue().toString();
   }
 }
 
@@ -102,3 +104,5 @@ class ZModuloP extends Field<number> {
     return this.name;
   }
 }
+
+export { ZModuloP, ZModuloPElement };
